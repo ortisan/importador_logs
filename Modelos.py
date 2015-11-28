@@ -1,14 +1,16 @@
 from peewee import *
 
 db = MySQLDatabase(
-    'logs_appgratis',  # Required by Peewee.
-    user='root',  # Will be passed directly to psycopg2.
-    password='Senha@123!',  # Ditto.
-    host='localhost',  # Ditto.
+    'logs_appgratis',
+    user='root',
+    password='Senha@123!',
+    host='localhost',
+    threadlocals=True
 )
 
 
 class Log(Model):
+    id = CharField(primary_key=True)
     ip = CharField()
     data = DateTimeField()
     url = CharField()
@@ -21,10 +23,7 @@ class Log(Model):
 
 
 if __name__ == '__main__':
-    # Connect to our database.
     db.connect()
-
-    # Create the tables.
     db.create_tables([Log])
 
-    #use python Modelos.py
+    # use python Modelos.py
