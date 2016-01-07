@@ -2,3 +2,5 @@
 .iml
 .pyc
 .log
+logs/**
+!logs/.gitkeep

@@ -1,5 +1,13 @@
 from peewee import *
 
+# db = MySQLDatabase(
+#     'logs_appgratis4',
+#     user='root',
+#     password='Senha@123!',
+#     host='localhost',
+#     threadlocals=True
+# )
+
 db = MySQLDatabase(
     'logs_appgratis',
     user='root',
